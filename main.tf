@@ -1,6 +1,6 @@
-## Managed By : OpsStation
+## Managed By : yadavprakash
 ## Description : This Script is used to create Transfer Server, Transfer User And  labels.
-## Copyright @ OpsStation. All Right Reserved.
+## Copyright @ yadavprakash. All Right Reserved.
 
 locals {
   ddos_pp_id = var.enable_ddos_pp && var.existing_ddos_pp != null ? var.existing_ddos_pp : var.enable_ddos_pp && var.existing_ddos_pp == null ? azurerm_network_ddos_protection_plan.ddos[0].id : null
@@ -12,7 +12,7 @@ locals {
 #              convention.
 
 module "labels" {
-  source      = "git::https://github.com/opsstation/terraform-azure-labels.git?ref=v1.0.0"
+  source      = "git::https://github.com/yadavprakash/terraform-azure-labels.git?ref=v1.0.0"
   name        = var.name
   environment = var.environment
   managedby   = var.managedby
